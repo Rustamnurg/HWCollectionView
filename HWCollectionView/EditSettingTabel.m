@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (nonatomic) BOOL isVisibalPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
+@property (strong, nonatomic) UserSettings *userSettings;
 
 @end
 
@@ -40,16 +41,22 @@
     _picker.dataSource = self;
     _isVisibalPicker = false;
     
-    
     if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"firstStart"] isEqual:@"false"]){
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveActionlButton)];
+        _nameTextField.text = @"";;
+        _userNameTextField.text = @"";
+        _wrbsiteTextField.text = @"";
+        _bioTextField.text = @"";
+        _emailTextField.text = @"";
+        _phoneTextField.text = @"";
         _gendorLabel.text = @"Not Specified";
+     
     }
     else{
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(canceActionlButton)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(doneActionlButton)];
-        [self getSettings];
+        _userSettings = [self getSettings];
     }
     _profilPhoto.image = [self loadImage];
     _profilPhoto.clipsToBounds = true;
@@ -222,7 +229,7 @@
         [UserSettings archiveUserSettings:userSettings];
     }
 }
-- (void)getSettings{
+- (UserSettings*)getSettings{
     UserSettings *userSettings = (UserSettings*)[UserSettings unarchiveUserSettings];
     _nameTextField.text = userSettings.name;
     _userNameTextField.text = userSettings.userName;
@@ -231,10 +238,20 @@
     _emailTextField.text = userSettings.email;
     _phoneTextField.text = userSettings.phine;
     _gendorLabel.text = userSettings.gender;
+    return userSettings;
 }
 - (BOOL)isChangeAnything{
-    UserSettings *userSettings = [UserSettings new];
-    if(userSettings.name !=  _nameTextField.text || userSettings.userName != _userNameTextField.text || userSettings.website != _wrbsiteTextField.text || userSettings.bio !=  _bioTextField.text || userSettings.email != _emailTextField.text || userSettings.phine != _phoneTextField.text ||  userSettings.gender != _gendorLabel.text){
+ //   UserSettings *userSettings = (UserSettings*)[UserSettings unarchiveUserSettings];
+    
+    NSLog(@"%@ - %@", _userSettings.name, _nameTextField.text);
+    NSLog(@"%@ - %@", _userSettings.userName, _userNameTextField.text);
+    NSLog(@"%@ - %@", _userSettings.website, _wrbsiteTextField.text);
+    NSLog(@"%@ - %@", _userSettings.bio, _bioTextField.text);
+    NSLog(@"%@ - %@", _userSettings.email, _emailTextField.text);
+    NSLog(@"%@ - %@", _userSettings.phine, _phoneTextField.text);
+    NSLog(@"%@ - %@", _userSettings.gender, _gendorLabel.text);
+    
+    if(_userSettings.name !=  _nameTextField.text || _userSettings.userName != _userNameTextField.text || _userSettings.website != _wrbsiteTextField.text || _userSettings.bio !=  _bioTextField.text || _userSettings.email != _emailTextField.text || _userSettings.phine != _phoneTextField.text ||  _userSettings.gender != _gendorLabel.text){
         return true;
     }
     return false;

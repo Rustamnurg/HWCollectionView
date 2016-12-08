@@ -54,6 +54,9 @@ static NSString * const reuseIdentifier = @"Cell";
         _userImage.clipsToBounds = true;
     }
     
+    _userImage.clipsToBounds = true;
+    _userImage.layer.cornerRadius = _userImage.frame.size.height/2;
+    
     [self.collectionView registerNib:[UINib nibWithNibName:@"CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

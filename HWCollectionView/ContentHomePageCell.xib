@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="444" id="KGk-i7-Jjw" customClass="ContentHomePageCell">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="444"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="443"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="HRS-Wt-Mxf">
+                        <rect key="frame" x="0.0" y="59" width="383" height="379.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-rz-Atm">
+                        <rect key="frame" x="8" y="8" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="AfC-vH-jXd"/>
+                            <constraint firstAttribute="width" constant="36" id="P5w-hO-3GN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-Lt-45m">
+                        <rect key="frame" x="49" y="8" width="291" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="dF1-yC-Ldb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7q-YW-lbT">
+                        <rect key="frame" x="345" y="8" width="30" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="H8w-Av-fzi"/>
+                            <constraint firstAttribute="width" secondItem="u7q-YW-lbT" secondAttribute="height" multiplier="5:6" id="N3Z-o6-1kd"/>
+                            <constraint firstAttribute="height" constant="36" id="d0U-A6-9OT"/>
+                        </constraints>
+                        <state key="normal" title="..."/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="u7q-YW-lbT" firstAttribute="leading" secondItem="D4q-Lt-45m" secondAttribute="trailing" constant="5" id="2RG-Zc-o9T"/>
+                    <constraint firstItem="D4q-Lt-45m" firstAttribute="leading" secondItem="zcC-rz-Atm" secondAttribute="trailing" constant="5" id="5UP-0j-rxN"/>
+                    <constraint firstItem="zcC-rz-Atm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="EAe-YW-7bn"/>
+                    <constraint firstItem="HRS-Wt-Mxf" firstAttribute="top" secondItem="u7q-YW-lbT" secondAttribute="bottom" constant="15" id="GNO-vT-4Sh"/>
+                    <constraint firstAttribute="bottom" secondItem="HRS-Wt-Mxf" secondAttribute="bottom" constant="5" id="LLi-Gx-g1v"/>
+                    <constraint firstAttribute="trailing" secondItem="u7q-YW-lbT" secondAttribute="trailing" constant="8" id="ME9-3a-9o3"/>
+                    <constraint firstAttribute="trailing" secondItem="HRS-Wt-Mxf" secondAttribute="trailing" id="cHi-Tb-q4H"/>
+                    <constraint firstItem="zcC-rz-Atm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="eco-Rb-0l4"/>
+                    <constraint firstItem="HRS-Wt-Mxf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ftR-qy-cF9"/>
+                    <constraint firstItem="u7q-YW-lbT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="g9a-mi-mTF"/>
+                    <constraint firstItem="D4q-Lt-45m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oDx-mk-weR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="threeDotsButton" destination="u7q-YW-lbT" id="b8O-lj-mIu"/>
+                <outlet property="userNameLabel" destination="D4q-Lt-45m" id="LgW-BP-nrp"/>
+                <outlet property="userProfilePhoto" destination="zcC-rz-Atm" id="qtK-d2-N0T"/>
+            </connections>
+            <point key="canvasLocation" x="66.5" y="254"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="520" height="390"/>
+        <image name="user" width="1280" height="720"/>
+    </resources>
+</document>
