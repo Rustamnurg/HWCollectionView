@@ -12,4 +12,5 @@
 @interface DataManager : NSObject
 + (instancetype)sharedInstance;
 - (void)createTable;
+- (void)addUsers:(NSString*)name;
 @end

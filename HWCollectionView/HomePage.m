@@ -27,8 +27,10 @@ static NSString * const collectionCellNamec = @"StoryCell";
     [self.feedTabelView registerNib:[UINib nibWithNibName:tabelCellName bundle:nil] forCellReuseIdentifier:tabelCellName];
     
     [self.storyCollection registerNib:[UINib nibWithNibName:collectionCellNamec bundle:nil] forCellWithReuseIdentifier:collectionCellNamec];
-    [[DataManager sharedInstance] createTable];
     
+//    [[DataManager sharedInstance] createTable];
+
+    [[DataManager sharedInstance] addUsers:@"dsad"];
     
 }
 
