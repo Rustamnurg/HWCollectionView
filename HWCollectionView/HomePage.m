@@ -37,14 +37,14 @@ static NSString * const collectionCellNamec = @"StoryCell";
     
     
     if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"firstStart"] isEqual:@"false"]){
+        [[DataManager sharedInstance] dropDB];
         [[DataManager sharedInstance] createTable];
-
+        
         User *user = [[User alloc] initWithUserName:@"login" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
         [[DataManager sharedInstance] addUsers: user];
         user = [[User alloc] initWithUserName:@"login2" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
         [[DataManager sharedInstance] addUsers: user];
         user = [[User alloc] initWithUserName:@"login3" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
-        user = [[User alloc] initWithUserName:@"login3" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@""
         [[DataManager sharedInstance] addUsers: user];
         user = [[User alloc] initWithUserName:@"login4" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
         [[DataManager sharedInstance] addUsers: user];

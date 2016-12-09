@@ -16,6 +16,7 @@
 
 + (instancetype)sharedInstance;
 - (void)createTable;
+- (void)dropDB;
 - (void)addUsers:(User*)user;
 - (void)addPhoto:(Photo*)photo;
 - (void)addHistory:(History*)history;
