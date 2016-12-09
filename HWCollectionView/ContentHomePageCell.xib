@@ -63,6 +63,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="contentImage" destination="HRS-Wt-Mxf" id="OMm-EP-Bto"/>
                 <outlet property="threeDotsButton" destination="u7q-YW-lbT" id="b8O-lj-mIu"/>
                 <outlet property="userNameLabel" destination="D4q-Lt-45m" id="LgW-BP-nrp"/>
                 <outlet property="userProfilePhoto" destination="zcC-rz-Atm" id="qtK-d2-N0T"/>

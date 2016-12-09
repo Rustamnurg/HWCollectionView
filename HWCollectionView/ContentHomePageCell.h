@@ -1,4 +1,4 @@
-//
+    //
 //  ContentHomePageCell.h
 //  HWCollectionView
 //
@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *userProfilePhoto;
 @property (weak, nonatomic) IBOutlet UIButton *threeDotsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
 
 @end

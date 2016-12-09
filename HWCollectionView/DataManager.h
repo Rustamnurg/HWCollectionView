@@ -8,9 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
+#import "User.h"
+#import "Photo.h"
+#import "History.h"
 
 @interface DataManager : NSObject
+
 + (instancetype)sharedInstance;
 - (void)createTable;
-- (void)addUsers:(NSString*)name;
+- (void)addUsers:(User*)user;
+- (void)addPhoto:(Photo*)photo;
+- (void)addHistory:(History*)history;
+- (NSArray*)getAllPhoto;
+- (NSArray*)getAllHistory;
+
 @end

@@ -2,8 +2,9 @@ DROP TABLE IF EXISTS photo;
 DROP TABLE IF EXISTS history;
 DROP TABLE IF EXISTS user;
 
-CREATE TABLE user (
-	username text PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS user (
+	--id integer autoincrement,
+	username text primary key,
 	first_name text,
 	email text,
 	phone text,
@@ -12,15 +13,20 @@ CREATE TABLE user (
 	gendor text
 );
 
-CREATE TABLE photo (
-	author text,
+CREATE TABLE IF NOT EXISTS photo (
+	author text NOT NULL,
 	photo_name text,
-	FOREIGN KEY(author) REFERENCES user(username)
+	create_date datetime,
+	FOREIGN KEY(author) REFERENCES user(id)
 );
 
-CREATE TABLE history (
-	author text,
+CREATE TABLE IF NOT EXISTS history (
+	author text NOT NULL,
 	history_name text,
-	left_to_live datetime
-	FOREIGN KEY(author) REFERENCES user(username)
+	create_date datetime,
+	FOREIGN KEY(author) REFERENCES user(id)
 );
+
+
+INSERT INTO user (username, first_name, email, phone, website, bio,gendor) VALUES ('dwusername', 'dqfirst_name', 'dqemail', 'phone', 'website', 'acsbio', 'gendorda');
+

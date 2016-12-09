@@ -11,6 +11,10 @@
 		4A3105FC1DD72A5400E5B3DD /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3105FB1DD72A5400E5B3DD /* PageContentViewController.m */; };
 		4A3105FF1DD72AC600E5B3DD /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3105FE1DD72AC600E5B3DD /* TutorialViewController.m */; };
 		4A4599281DF17FE5004DC3D6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4599271DF17FE5004DC3D6 /* TableViewController.m */; };
+		4A5F0ED51DFAEF37002FB2EB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0ED41DFAEF37002FB2EB /* User.m */; };
+		4A5F0ED81DFAF163002FB2EB /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0ED71DFAF163002FB2EB /* Photo.m */; };
+		4A5F0EDB1DFAF1F1002FB2EB /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0EDA1DFAF1F1002FB2EB /* History.m */; };
+		4A5F0EDE1DFAF257002FB2EB /* UserForUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0EDD1DFAF257002FB2EB /* UserForUsers.m */; };
 		4A793FF11DF0B5CE00D4B4B8 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A793FF01DF0B5CE00D4B4B8 /* StoryCell.m */; };
 		4A793FF31DF0B78900D4B4B8 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A793FF21DF0B78900D4B4B8 /* StoryCell.xib */; };
 		4A91BF6F1DD2710500F35110 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BF6D1DD2710500F35110 /* CollectionViewCell.m */; };
@@ -43,6 +47,14 @@
 		4A3105FE1DD72AC600E5B3DD /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		4A4599261DF17FE5004DC3D6 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4A4599271DF17FE5004DC3D6 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4A5F0ED31DFAEF37002FB2EB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4A5F0ED41DFAEF37002FB2EB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4A5F0ED61DFAF163002FB2EB /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		4A5F0ED71DFAF163002FB2EB /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		4A5F0ED91DFAF1F1002FB2EB /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		4A5F0EDA1DFAF1F1002FB2EB /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+		4A5F0EDC1DFAF257002FB2EB /* UserForUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserForUsers.h; sourceTree = "<group>"; };
+		4A5F0EDD1DFAF257002FB2EB /* UserForUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserForUsers.m; sourceTree = "<group>"; };
 		4A793FEF1DF0B5CE00D4B4B8 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		4A793FF01DF0B5CE00D4B4B8 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		4A793FF21DF0B78900D4B4B8 /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
@@ -109,6 +121,21 @@
 			name = DeteailImage;
 			sourceTree = "<group>";
 		};
+		4A5F0ED21DFAEF0F002FB2EB /* Essence */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F0ED31DFAEF37002FB2EB /* User.h */,
+				4A5F0ED41DFAEF37002FB2EB /* User.m */,
+				4A5F0ED61DFAF163002FB2EB /* Photo.h */,
+				4A5F0ED71DFAF163002FB2EB /* Photo.m */,
+				4A5F0ED91DFAF1F1002FB2EB /* History.h */,
+				4A5F0EDA1DFAF1F1002FB2EB /* History.m */,
+				4A5F0EDC1DFAF257002FB2EB /* UserForUsers.h */,
+				4A5F0EDD1DFAF257002FB2EB /* UserForUsers.m */,
+			);
+			name = Essence;
+			sourceTree = "<group>";
+		};
 		4A617EE51DF9656A00AD9E34 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +148,8 @@
 		4A75F5CF1DD63922009E43CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A617EE51DF9656A00AD9E34 /* Classes */,
+				4A5F0ED21DFAEF0F002FB2EB /* Essence */,
 				4A9256CE1DE102DB002A1EF3 /* ListProcessor.h */,
 				4A9256CF1DE102DB002A1EF3 /* ListProcessor.m */,
 				4A92CC271DE7896900394E8E /* Utils.h */,
@@ -218,7 +247,6 @@
 		7CF88CE61DCBD89F0040F8F7 /* HWCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				4A617EE51DF9656A00AD9E34 /* Classes */,
 				4A75F5CF1DD63922009E43CD /* Model */,
 				4A75F5D01DD63932009E43CD /* View */,
 				4A75F5D11DD6393B009E43CD /* Controller */,
@@ -379,6 +407,8 @@
 				7CF88CEF1DCBD89F0040F8F7 /* ViewController.m in Sources */,
 				4AAD7C3C1DF0820300095C55 /* ContentHomePageCell.m in Sources */,
 				4A9256CD1DE0E9DA002A1EF3 /* DetailCollectionView.m in Sources */,
+				4A5F0ED51DFAEF37002FB2EB /* User.m in Sources */,
+				4A5F0EDB1DFAF1F1002FB2EB /* History.m in Sources */,
 				4A92CC291DE7896900394E8E /* Utils.m in Sources */,
 				4AE3B8361DE896570059349B /* UserSettings.m in Sources */,
 				4A3105FC1DD72A5400E5B3DD /* PageContentViewController.m in Sources */,
@@ -386,6 +416,8 @@
 				4AAD7C341DF07F7400095C55 /* HomePage.m in Sources */,
 				7CF88CE91DCBD89F0040F8F7 /* main.m in Sources */,
 				4A793FF11DF0B5CE00D4B4B8 /* StoryCell.m in Sources */,
+				4A5F0EDE1DFAF257002FB2EB /* UserForUsers.m in Sources */,
+				4A5F0ED81DFAF163002FB2EB /* Photo.m in Sources */,
 				4A28AED51DE613D700BE2D0C /* EditSettingTabel.m in Sources */,
 				4A9256D01DE102DB002A1EF3 /* ListProcessor.m in Sources */,
 				4AB4B3261DF95BF600767422 /* DataManager.m in Sources */,

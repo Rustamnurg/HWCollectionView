@@ -27,40 +27,87 @@
     self = [super init];
     if(self){
         NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-        NSString *path = [docPath stringByAppendingPathComponent:@"sqllDB"];
+        NSString *path = [docPath stringByAppendingPathComponent:@"instagramSQLite"];
         dataBase = [[FMDatabase alloc]initWithPath:path];
         [dataBase open];
         NSLog(@"%@", path);
-
+        
     }
     return self;
 }
-//DROP TABLE IF EXISTS photo; DROP TABLE IF EXISTS history; DROP TABLE IF EXISTS user;
+
 - (void)createTable{
-    NSString *sqlRequest = @" CREATE TABLE IF NOT EXISTS user (username text PRIMARY KEY, first_name text, email text, phone text, website text, bio text, gendor text); CREATE TABLE IF NOT EXISTS photo (author text, photo_name text, FOREIGN KEY(author) REFERENCES user(username)); CREATE TABLE IF NOT EXISTS history (author text, history_name text, left_to_live datetime, FOREIGN KEY(author) REFERENCES user(username));";
+    NSString *createUserTables = @"CREATE TABLE IF NOT EXISTS user (username text primary key, first_name text, email text, phone text, website text, bio text, gendor text);";
+    NSString *createPhotoTables = @"CREATE TABLE IF NOT EXISTS photo (author text NOT NULL, photo_name text, create_date datetime, FOREIGN KEY(author) REFERENCES user(username));";
+    NSString *createHistoryTables = @"CREATE TABLE IF NOT EXISTS history (author text NOT NULL, history_name text, create_date datetime, FOREIGN KEY(author) REFERENCES user(username));";
+    
     @try {
-        [dataBase executeUpdate:sqlRequest];
+        [dataBase executeUpdate:createUserTables];
+        [dataBase executeUpdate:createPhotoTables];
+        [dataBase executeUpdate:createHistoryTables];
     } @catch (NSException *exception) {
         NSLog(@"Exception: %@", exception);
     }
 }
 
-- (void)addUsers:(NSString*)name{
-    NSString *insertQuery = @"INSERT INTO user (username, first_name, email, phone, website, bio,gendor) VALUES (?, 'dqfirst_name', 'dqemail', 'phone', 'website', 'acsbio', 'gendorda');";
+
+- (void)addUsers:(User*)user{
+    NSString *insertQuery = @"INSERT INTO user (username, first_name, email, phone, website, bio,gendor) VALUES (?, ?, ?, ?, ?, ?, ?);";
     @try {
-        [dataBase executeUpdate:insertQuery, name];
+        [dataBase executeUpdate:insertQuery, user.username, user.firstName, user.email, user.phone, user.website, user.bio, user.gendor];
     } @catch (NSException *exception) {
         NSLog(@"Exception: %@", exception);
     }
-    
-    FMResultSet *resultSet = [dataBase executeQuery:@"select count(*) from user"];
+
+}
+- (void)addPhoto:(Photo*)photo{
+    NSString *insertQuery = @"INSERT INTO photo (author, photo_name, create_date) VALUES (?, ?, ?);";
+    @try {
+        [dataBase executeUpdate:insertQuery, photo.author, photo.photoName, photo.createDate];
+    } @catch (NSException *exception) {
+        NSLog(@"Exception: %@", exception);
+    }
+}
+
+- (void)addHistory:(History*)history{
+    NSString *insertQuery = @"INSERT INTO history (author, history_name, create_date) VALUES (?, ?, ?);";
+    @try {
+        [dataBase executeUpdate:insertQuery, history.author, history.historyName, history.createDate];
+    } @catch (NSException *exception) {
+        NSLog(@"Exception: %@", exception);
+    }
+}
+
+
+
+- (NSArray*)getAllPhoto{
+    FMResultSet *resultSet = [dataBase executeQuery:@"SELECT * FROM photo;"];
+    NSMutableArray *dataArr = [NSMutableArray new];
     
     while (resultSet.next) {
-        NSLog(@"   %ld   ", [resultSet longForColumnIndex:0]);
+        Photo *photo = [Photo new];
+        photo.author = [resultSet stringForColumn:@"author"];
+        photo.photoName = [resultSet stringForColumn:@"photo_name"];
+        photo.createDate = [resultSet stringForColumn:@"create_date"];
+        [dataArr addObject:photo];
     }
-
-    
+    return dataArr;
 }
+
+- (NSArray*)getAllHistory{
+    FMResultSet *resultSet = [dataBase executeQuery:@"SELECT * FROM history;"];
+    NSMutableArray *dataArr = [NSMutableArray new];
+    
+    while (resultSet.next) {
+        History *history = [History new];
+        history.author = [resultSet stringForColumn:@"author"];
+        history.historyName = [resultSet stringForColumn:@"history_name"];
+        history.createDate = [resultSet stringForColumn:@"create_date"];
+        [dataArr addObject:history];
+    }
+    return dataArr;
+}
+
 @end
 
 
@@ -69,6 +116,11 @@
 
 
 
+//    FMResultSet *resultSet = [dataBase executeQuery:@"select count(*) from user"];
+//
+//    while (resultSet.next) {
+//        NSLog(@"   %ld   ", [resultSet longForColumnIndex:0]);
+//    }
 
 
 
