@@ -11,7 +11,7 @@
 @implementation User
 
 
-- (id) initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andEmail:(NSString*)email andPhone:(NSString*)phone andWebsite:(NSString*)website andBio:(NSString*)bio andGendor:(NSString*)gendor {
+- (id) initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andEmail:(NSString*)email andPhone:(NSString*)phone andWebsite:(NSString*)website andBio:(NSString*)bio andGendor:(NSString*)gendor andPhoto:(NSString*)photo{
     self = [super init];
     if (self != nil) {
         _username = username;
@@ -21,6 +21,7 @@
         _website = website;
         _bio = bio;
         _gendor = gendor;
+        _photo = photo;
     }
     return self;
 }

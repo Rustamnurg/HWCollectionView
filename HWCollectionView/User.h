@@ -17,7 +17,8 @@
 @property (strong, nonatomic) NSString *website;
 @property (strong, nonatomic) NSString *bio;
 @property (strong, nonatomic) NSString *gendor;
+@property (strong, nonatomic) NSString *photo;
 
-- (id) initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andEmail:(NSString*)email andPhone:(NSString*)phone andWebsite:(NSString*)website andBio:(NSString*)bio andGendor:(NSString*)gendor;
+- (id) initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andEmail:(NSString*)email andPhone:(NSString*)phone andWebsite:(NSString*)website andBio:(NSString*)bio andGendor:(NSString*)gendor andPhoto:(NSString*)photo;
 
 @end

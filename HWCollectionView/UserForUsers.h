@@ -14,7 +14,8 @@
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *website;
 @property (strong, nonatomic) NSString *bio;
+@property (strong, nonatomic) NSString *photo;
 
-- (id)initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andWebsite:(NSString*)website andBio:(NSString*)bio;
+- (id)initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andWebsite:(NSString*)website andBio:(NSString*)bio andPhoto:(NSString*)photo;
 
 @end

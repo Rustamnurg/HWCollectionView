@@ -22,5 +22,6 @@
 - (void)addHistory:(History*)history;
 - (NSArray*)getAllPhoto;
 - (NSArray*)getAllHistory;
+- (NSDictionary*)getUserProfilPhoto;
 
 @end

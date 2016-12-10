@@ -1,14 +1,14 @@
 //
-//  ContentHomePageCell.m
+//  HistoryCollectionTabelViewCell.m
 //  HWCollectionView
 //
-//  Created by Rustam N on 01.12.16.
+//  Created by Rustam N on 10.12.16.
 //  Copyright © 2016 com.itis.iosLab. All rights reserved.
 //
 
-#import "ContentHomePageCell.h"
+#import "HistoryCollectionTabelViewCell.h"
 
-@implementation ContentHomePageCell
+@implementation HistoryCollectionTabelViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -17,14 +17,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
- 
 
     // Configure the view for the selected state
-}
-
-- (void)drawRect:(CGRect)rect {
-    _userProfilePhoto.clipsToBounds = true;
-    _userProfilePhoto.layer.cornerRadius = _userProfilePhoto.frame.size.width/2;
 }
 
 @end

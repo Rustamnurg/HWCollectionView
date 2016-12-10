@@ -31,16 +31,15 @@
         dataBase = [[FMDatabase alloc]initWithPath:path];
         [dataBase open];
         NSLog(@"%@", path);
-        
     }
     return self;
 }
 
 
 - (void)addUsers:(User*)user{
-    NSString *insertQuery = @"INSERT INTO user (username, first_name, email, phone, website, bio,gendor) VALUES (?, ?, ?, ?, ?, ?, ?);";
+    NSString *insertQuery = @"INSERT INTO user (username, first_name, email, phone, website, bio, gendor, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
     @try {
-        [dataBase executeUpdate:insertQuery, user.username, user.firstName, user.email, user.phone, user.website, user.bio, user.gendor];
+        [dataBase executeUpdate:insertQuery, user.username, user.firstName, user.email, user.phone, user.website, user.bio, user.gendor, user.photo];
     } @catch (NSException *exception) {
         NSLog(@"Exception: %@", exception);
     }
@@ -94,10 +93,19 @@
     return dataArr;
 }
 
+- (NSDictionary*)getUserProfilPhoto{
+    FMResultSet *resultSet = [dataBase executeQuery:@"SELECT * FROM user;"];
+    NSMutableDictionary *dataArr = [NSMutableDictionary new];
+    while (resultSet.next) {
+        [dataArr setValue:[resultSet stringForColumn:@"photo"] forKey:[resultSet stringForColumn:@"username"]];
+    }
+    return dataArr;
+}
+
 
 #pragma mark - other manipulation with DB
 - (void)createTable{
-    NSString *createUserTables = @"CREATE TABLE IF NOT EXISTS user (username text primary key, first_name text, email text, phone text, website text, bio text, gendor text);";
+    NSString *createUserTables = @"CREATE TABLE IF NOT EXISTS user (username text primary key, first_name text, email text, phone text, website text, bio text, gendor text, photo text);";
     NSString *createPhotoTables = @"CREATE TABLE IF NOT EXISTS photo (author text NOT NULL, photo_name text, create_date datetime, FOREIGN KEY(author) REFERENCES user(username));";
     NSString *createHistoryTables = @"CREATE TABLE IF NOT EXISTS history (author text NOT NULL, history_name text, create_date datetime, FOREIGN KEY(author) REFERENCES user(username));";
     

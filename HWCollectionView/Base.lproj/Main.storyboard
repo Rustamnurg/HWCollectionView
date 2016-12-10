@@ -723,10 +723,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="274" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MqT-e8-wt3">
-                                <rect key="frame" x="0.0" y="160" width="375" height="458"/>
+                            <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MqT-e8-wt3">
+                                <rect key="frame" x="0.0" y="60" width="375" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <collectionView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="fCp-IU-Qoz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="pkv-2j-7t3"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xic-hm-XWb">
+                                        <size key="itemSize" width="86" height="86"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <cells/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="z3B-2e-NPy" id="Drs-ye-kHE"/>
+                                        <outlet property="delegate" destination="z3B-2e-NPy" id="MJA-bS-E2N"/>
+                                    </connections>
+                                </collectionView>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="z3B-2e-NPy" id="9dS-vJ-QEB"/>
@@ -742,37 +761,16 @@
                                     <navigationItem title="Instagram" id="pnS-ie-kgw"/>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fCp-IU-Qoz">
-                                <rect key="frame" x="0.0" y="60" width="375" height="100"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="pkv-2j-7t3"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xic-hm-XWb">
-                                    <size key="itemSize" width="86" height="86"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="z3B-2e-NPy" id="Drs-ye-kHE"/>
-                                    <outlet property="delegate" destination="z3B-2e-NPy" id="MJA-bS-E2N"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="y6x-F7-duc" firstAttribute="leading" secondItem="ZHq-ax-sZI" secondAttribute="leading" id="2Eh-MT-Hey"/>
                             <constraint firstItem="MqT-e8-wt3" firstAttribute="leading" secondItem="ZHq-ax-sZI" secondAttribute="leading" id="4eR-s1-DmI"/>
-                            <constraint firstAttribute="trailing" secondItem="fCp-IU-Qoz" secondAttribute="trailing" id="9ZL-wZ-fjh"/>
                             <constraint firstAttribute="trailing" secondItem="MqT-e8-wt3" secondAttribute="trailing" id="DlK-JX-Y4B"/>
-                            <constraint firstItem="fCp-IU-Qoz" firstAttribute="leading" secondItem="ZHq-ax-sZI" secondAttribute="leading" id="K9Z-fC-Zeu"/>
                             <constraint firstAttribute="trailing" secondItem="y6x-F7-duc" secondAttribute="trailing" id="L4p-xW-ITU"/>
                             <constraint firstItem="Cxd-nN-drP" firstAttribute="top" secondItem="MqT-e8-wt3" secondAttribute="bottom" id="N8K-dV-QTt"/>
-                            <constraint firstItem="MqT-e8-wt3" firstAttribute="top" secondItem="fCp-IU-Qoz" secondAttribute="bottom" id="Qw7-vl-Qp1"/>
                             <constraint firstItem="y6x-F7-duc" firstAttribute="top" secondItem="ZHq-ax-sZI" secondAttribute="top" id="Saz-Vu-fu5"/>
-                            <constraint firstItem="fCp-IU-Qoz" firstAttribute="top" secondItem="y6x-F7-duc" secondAttribute="bottom" id="TnA-W5-fnB"/>
+                            <constraint firstItem="MqT-e8-wt3" firstAttribute="top" secondItem="y6x-F7-duc" secondAttribute="bottom" id="YhM-fH-ORn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="NMm-Nb-1Cp"/>

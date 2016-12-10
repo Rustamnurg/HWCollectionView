@@ -13,6 +13,7 @@
 #import "User.h"
 #import "Photo.h"
 #import "History.h"
+#import "HistoryCollectionTabelViewCell.h"
 
 @interface HomePage () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTabelView;
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) NSArray *historyArr;
 @property (strong, nonatomic) Photo *photoDate;
 @property (strong, nonatomic) History *historyDate;
+@property (strong, nonatomic) NSDictionary *profilePhottoArr;
 
 
 @end
@@ -28,6 +30,7 @@
 @implementation HomePage
 static NSString * const tabelCellName = @"ContentHomePageCell";
 static NSString * const collectionCellNamec = @"StoryCell";
+static NSString * const historyCell = @"HistoryCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,18 +38,19 @@ static NSString * const collectionCellNamec = @"StoryCell";
     
     [self.storyCollection registerNib:[UINib nibWithNibName:collectionCellNamec bundle:nil] forCellWithReuseIdentifier:collectionCellNamec];
     
+    _profilePhottoArr = [[DataManager sharedInstance] getUserProfilPhoto];
     
     if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"firstStart"] isEqual:@"false"]){
         [[DataManager sharedInstance] dropDB];
         [[DataManager sharedInstance] createTable];
         
-        User *user = [[User alloc] initWithUserName:@"login" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
+        User *user = [[User alloc] initWithUserName:@"login" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@"" andPhoto:@"2"];
         [[DataManager sharedInstance] addUsers: user];
-        user = [[User alloc] initWithUserName:@"login2" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
+        user = [[User alloc] initWithUserName:@"login2" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@"" andPhoto:@"4"];
         [[DataManager sharedInstance] addUsers: user];
-        user = [[User alloc] initWithUserName:@"login3" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
+        user = [[User alloc] initWithUserName:@"login3" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@"" andPhoto:@"user"];
         [[DataManager sharedInstance] addUsers: user];
-        user = [[User alloc] initWithUserName:@"login4" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@""];
+        user = [[User alloc] initWithUserName:@"login4" andFirstName:@"name" andEmail:@"DS@" andPhone:@"+123" andWebsite:@"" andBio:@"vdsvsv" andGendor:@"" andPhoto:@"user-1"];
         [[DataManager sharedInstance] addUsers: user];
         
         Photo *photo = [[Photo alloc]initWithAuthor:@"login" andPhotoName:@"6" andCreateDate:@"2007-01-01 10:00:00"];
@@ -75,19 +79,15 @@ static NSString * const collectionCellNamec = @"StoryCell";
         history = [[History alloc]initWithAuthor:@"login4" andHistoryName:@"7" andCreatDate:@"2007-01-01 10:00:00"];
         [[DataManager sharedInstance] addHistory: history];
         
-//        [[DataManager sharedInstance] createTable];
-//        [[DataManager sharedInstance] addUsers: user];
-//        [[DataManager sharedInstance] addPhoto: photo];
-//        [[DataManager sharedInstance] addHistory: history];
+        //        [[DataManager sharedInstance] createTable];
+        //        [[DataManager sharedInstance] addUsers: user];
+        //        [[DataManager sharedInstance] addPhoto: photo];
+        //        [[DataManager sharedInstance] addHistory: history];
     }
-
+    
     _photoArr = [[DataManager sharedInstance] getAllPhoto];
     _historyArr = [[DataManager sharedInstance] getAllHistory];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _profilePhottoArr = [[DataManager sharedInstance] getUserProfilPhoto];
 }
 
 #pragma mark - Table view data source
@@ -109,8 +109,11 @@ static NSString * const collectionCellNamec = @"StoryCell";
     _photoDate = [_photoArr objectAtIndex:indexPath.row];
     cell.userNameLabel.text = _photoDate.author;
     cell.contentImage.image = [UIImage imageNamed: _photoDate.photoName];
+    cell.userProfilePhoto.image = [UIImage imageNamed: [_profilePhottoArr objectForKey:_photoDate.author]];
     return cell;
 }
+
+
 
 #pragma mark <UICollectionViewDataSource>
 

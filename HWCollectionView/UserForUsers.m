@@ -10,13 +10,14 @@
 
 @implementation UserForUsers
 
-- (id)initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andWebsite:(NSString*)website andBio:(NSString*)bio{
+- (id)initWithUserName:(NSString*)username andFirstName:(NSString*)firstName andWebsite:(NSString*)website andBio:(NSString*)bio andPhoto:(NSString*)photo{
     self = [super init];
     if (self != nil) {
         _username = username;
         _firstName = firstName;
         _website = website;
         _bio = bio;
+        _photo = photo;
     }
     return self;
 }
