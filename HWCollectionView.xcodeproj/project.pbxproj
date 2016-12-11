@@ -26,6 +26,7 @@
 		4AAD7C3C1DF0820300095C55 /* ContentHomePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD7C3A1DF0820300095C55 /* ContentHomePageCell.m */; };
 		4AAD7C3D1DF0820300095C55 /* ContentHomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AAD7C3B1DF0820300095C55 /* ContentHomePageCell.xib */; };
 		4AB4B3261DF95BF600767422 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4B3251DF95BF600767422 /* DataManager.m */; };
+		4AC2A0AB1DFC42780081EFA2 /* AnotherUserPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2A0A91DFC42780081EFA2 /* AnotherUserPage.m */; };
 		4AE3B8361DE896570059349B /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3B8351DE896570059349B /* UserSettings.m */; };
 		70DCB224C4121D159C83D6A2 /* libPods-HWCollectionView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 674765D754A2ABDBBBF59E7A /* libPods-HWCollectionView.a */; };
 		7CF88CE91DCBD89F0040F8F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88CE81DCBD89F0040F8F7 /* main.m */; };
@@ -74,6 +75,8 @@
 		4AAD7C3B1DF0820300095C55 /* ContentHomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentHomePageCell.xib; sourceTree = "<group>"; };
 		4AB4B3241DF95BF600767422 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		4AB4B3251DF95BF600767422 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		4AC2A0A81DFC42780081EFA2 /* AnotherUserPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherUserPage.h; sourceTree = "<group>"; };
+		4AC2A0A91DFC42780081EFA2 /* AnotherUserPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherUserPage.m; sourceTree = "<group>"; };
 		4AE3B8341DE896570059349B /* UserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettings.h; sourceTree = "<group>"; };
 		4AE3B8351DE896570059349B /* UserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettings.m; sourceTree = "<group>"; };
 		674765D754A2ABDBBBF59E7A /* libPods-HWCollectionView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HWCollectionView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +211,8 @@
 			children = (
 				4AAD7C321DF07F7400095C55 /* HomePage.h */,
 				4AAD7C331DF07F7400095C55 /* HomePage.m */,
+				4AC2A0A81DFC42780081EFA2 /* AnotherUserPage.h */,
+				4AC2A0A91DFC42780081EFA2 /* AnotherUserPage.m */,
 				4AAD7C391DF0820300095C55 /* ContentHomePageCell.h */,
 				4AAD7C3A1DF0820300095C55 /* ContentHomePageCell.m */,
 				4A793FEF1DF0B5CE00D4B4B8 /* StoryCell.h */,
@@ -415,6 +420,7 @@
 				7CF88CEC1DCBD89F0040F8F7 /* AppDelegate.m in Sources */,
 				4AAD7C341DF07F7400095C55 /* HomePage.m in Sources */,
 				7CF88CE91DCBD89F0040F8F7 /* main.m in Sources */,
+				4AC2A0AB1DFC42780081EFA2 /* AnotherUserPage.m in Sources */,
 				4A793FF11DF0B5CE00D4B4B8 /* StoryCell.m in Sources */,
 				4A5F0EDE1DFAF257002FB2EB /* UserForUsers.m in Sources */,
 				4A5F0ED81DFAF163002FB2EB /* Photo.m in Sources */,

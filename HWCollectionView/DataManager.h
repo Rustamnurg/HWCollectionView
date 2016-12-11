@@ -11,6 +11,7 @@
 #import "User.h"
 #import "Photo.h"
 #import "History.h"
+#import "UserForUsers.h"
 
 @interface DataManager : NSObject
 
@@ -23,5 +24,7 @@
 - (NSArray*)getAllPhoto;
 - (NSArray*)getAllHistory;
 - (NSDictionary*)getUserProfilPhoto;
+- (UserForUsers*)getUserInfoForAnotherUser:(NSString*)userName;
+- (NSArray*)getUserAllPhotos:(NSString*)userName;
 
 @end

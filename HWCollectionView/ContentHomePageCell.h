@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *threeDotsButton;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;
 
+
 @end

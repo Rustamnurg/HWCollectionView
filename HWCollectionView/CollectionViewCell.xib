@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="237" height="207"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SomeText" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb3-Hu-ah1">
-                        <rect key="frame" x="0.0" y="187" width="237" height="20"/>
+                        <rect key="frame" x="0.0" y="207" width="237" height="0.0"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Fkd-jL-7WX"/>
+                            <constraint firstAttribute="height" id="W0T-Br-5qN"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

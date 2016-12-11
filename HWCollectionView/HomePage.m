@@ -14,6 +14,7 @@
 #import "Photo.h"
 #import "History.h"
 #import "HistoryCollectionTabelViewCell.h"
+#import "AnotherUserPage.h"
 
 @interface HomePage () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTabelView;
@@ -88,6 +89,7 @@ static NSString * const historyCell = @"HistoryCell";
     _photoArr = [[DataManager sharedInstance] getAllPhoto];
     _historyArr = [[DataManager sharedInstance] getAllHistory];
     _profilePhottoArr = [[DataManager sharedInstance] getUserProfilPhoto];
+    self.feedTabelView.allowsSelection = NO;
 }
 
 #pragma mark - Table view data source
@@ -110,13 +112,35 @@ static NSString * const historyCell = @"HistoryCell";
     cell.userNameLabel.text = _photoDate.author;
     cell.contentImage.image = [UIImage imageNamed: _photoDate.photoName];
     cell.userProfilePhoto.image = [UIImage imageNamed: [_profilePhottoArr objectForKey:_photoDate.author]];
+    
+    cell.userNameLabel.tag = indexPath.row;
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedOnLink:)];
+    [cell.userNameLabel setUserInteractionEnabled:YES];
+    [cell.userNameLabel addGestureRecognizer:gesture];
     return cell;
 }
 
 
+//- (void)userTappedOnLink:(UIGestureRecognizer*)gestureRecognizer{
+//    
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    AnotherUserPage *anotherUserPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"AnotherUserPage"];
+//    [self.navigationController pushViewController:anotherUserPage animated:YES];
+//
+//}
+
+- (void)userTappedOnLink:(id) sender{
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    //gesture.view.tag
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AnotherUserPage *anotherUserPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"AnotherUserPage"];
+    Photo *photo = [_photoArr objectAtIndex: gesture.view.tag];
+    anotherUserPage.userName = photo.author;
+    [self.navigationController pushViewController:anotherUserPage animated:YES];
+}
+
 
 #pragma mark <UICollectionViewDataSource>
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _historyArr.count;
@@ -127,12 +151,9 @@ static NSString * const historyCell = @"HistoryCell";
     _historyDate = [_historyArr objectAtIndex:indexPath.row];
     cell.storyImage.image = [UIImage imageNamed:_historyDate.historyName];
     cell.loginLabel.text = _historyDate.author;
-    
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-}
 
 @end

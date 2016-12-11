@@ -93,6 +93,7 @@
     return dataArr;
 }
 
+//переделать в один метод
 - (NSDictionary*)getUserProfilPhoto{
     FMResultSet *resultSet = [dataBase executeQuery:@"SELECT * FROM user;"];
     NSMutableDictionary *dataArr = [NSMutableDictionary new];
@@ -100,6 +101,25 @@
         [dataArr setValue:[resultSet stringForColumn:@"photo"] forKey:[resultSet stringForColumn:@"username"]];
     }
     return dataArr;
+}
+
+- (UserForUsers*)getUserInfoForAnotherUser:(NSString*)userName{
+    FMResultSet *resultSet = [dataBase executeQuery:[NSString stringWithFormat:@"SELECT * FROM user where username = '%@';", userName]];
+    UserForUsers *user;
+    while (resultSet.next) {
+        user = [[UserForUsers alloc]initWithUserName:[resultSet stringForColumn:@"username"] andFirstName:[resultSet stringForColumn:@"first_name"] andWebsite:[resultSet stringForColumn:@"website"] andBio:[resultSet stringForColumn:@"bio"] andPhoto:[resultSet stringForColumn:@"photo"]];
+    }    
+    return user;
+}
+
+- (NSArray*)getUserAllPhotos:(NSString*)userName{
+    FMResultSet *resultSet = [dataBase executeQuery:[NSString stringWithFormat:@"SELECT * FROM photo where author = '%@';", userName]];
+    NSMutableArray *arr = [NSMutableArray new];
+    while (resultSet.next) {
+        Photo *photo = [[Photo alloc] initWithAuthor:[resultSet stringForColumn:@"author"] andPhotoName:[resultSet stringForColumn:@"photo_name"] andCreateDate:[resultSet stringForColumn:@"create_date"]];
+        [arr addObject:photo];
+    }
+    return arr;
 }
 
 
