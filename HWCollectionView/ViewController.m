@@ -28,7 +28,6 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     ListProcessor *lp = [ListProcessor new];
