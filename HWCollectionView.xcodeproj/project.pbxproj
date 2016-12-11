@@ -15,6 +15,7 @@
 		4A5F0ED81DFAF163002FB2EB /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0ED71DFAF163002FB2EB /* Photo.m */; };
 		4A5F0EDB1DFAF1F1002FB2EB /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0EDA1DFAF1F1002FB2EB /* History.m */; };
 		4A5F0EDE1DFAF257002FB2EB /* UserForUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F0EDD1DFAF257002FB2EB /* UserForUsers.m */; };
+		4A6DEFF01DFD452200A91E7D /* WelcomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6DEFEF1DFD452200A91E7D /* WelcomViewController.m */; };
 		4A793FF11DF0B5CE00D4B4B8 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A793FF01DF0B5CE00D4B4B8 /* StoryCell.m */; };
 		4A793FF31DF0B78900D4B4B8 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A793FF21DF0B78900D4B4B8 /* StoryCell.xib */; };
 		4A91BF6F1DD2710500F35110 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BF6D1DD2710500F35110 /* CollectionViewCell.m */; };
@@ -56,6 +57,8 @@
 		4A5F0EDA1DFAF1F1002FB2EB /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		4A5F0EDC1DFAF257002FB2EB /* UserForUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserForUsers.h; sourceTree = "<group>"; };
 		4A5F0EDD1DFAF257002FB2EB /* UserForUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserForUsers.m; sourceTree = "<group>"; };
+		4A6DEFEE1DFD452200A91E7D /* WelcomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomViewController.h; sourceTree = "<group>"; };
+		4A6DEFEF1DFD452200A91E7D /* WelcomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomViewController.m; sourceTree = "<group>"; };
 		4A793FEF1DF0B5CE00D4B4B8 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		4A793FF01DF0B5CE00D4B4B8 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		4A793FF21DF0B78900D4B4B8 /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 			children = (
 				4AAD7C311DF07E7900095C55 /* HomePage */,
 				4AAD7C301DF07E3000095C55 /* UserPage */,
+				4A6DEFEE1DFD452200A91E7D /* WelcomViewController.h */,
+				4A6DEFEF1DFD452200A91E7D /* WelcomViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				4AAD7C3C1DF0820300095C55 /* ContentHomePageCell.m in Sources */,
 				4A9256CD1DE0E9DA002A1EF3 /* DetailCollectionView.m in Sources */,
 				4A5F0ED51DFAEF37002FB2EB /* User.m in Sources */,
+				4A6DEFF01DFD452200A91E7D /* WelcomViewController.m in Sources */,
 				4A5F0EDB1DFAF1F1002FB2EB /* History.m in Sources */,
 				4A92CC291DE7896900394E8E /* Utils.m in Sources */,
 				4AE3B8361DE896570059349B /* UserSettings.m in Sources */,

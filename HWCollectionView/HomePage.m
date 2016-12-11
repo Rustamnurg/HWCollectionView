@@ -121,17 +121,8 @@ static NSString * const historyCell = @"HistoryCell";
 }
 
 
-//- (void)userTappedOnLink:(UIGestureRecognizer*)gestureRecognizer{
-//    
-//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    AnotherUserPage *anotherUserPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"AnotherUserPage"];
-//    [self.navigationController pushViewController:anotherUserPage animated:YES];
-//
-//}
-
 - (void)userTappedOnLink:(id) sender{
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
-    //gesture.view.tag
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AnotherUserPage *anotherUserPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"AnotherUserPage"];
     Photo *photo = [_photoArr objectAtIndex: gesture.view.tag];
