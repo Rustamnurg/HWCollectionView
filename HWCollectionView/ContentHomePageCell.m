@@ -12,21 +12,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedOnLink:)];
-//    
-//    [_userNameLabel setUserInteractionEnabled:YES];
-//    [_userNameLabel addGestureRecognizer:gesture];
+    _contentImage.contentMode = UIViewContentModeScaleAspectFit;
+    
+    
 }
 
-
-//- (void)userTappedOnLink:(UIGestureRecognizer*)gestureRecognizer{
-//    NSLog(@"tap");
-//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UIViewController *descriptionVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AnotherUserPage"];
-//    [self presentViewController:descriptionVC animated:NO completion:nil];
-//
-//
-//}
 
 
 
@@ -34,8 +24,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
  
-
-    // Configure the view for the selected state
 }
 
 - (void)drawRect:(CGRect)rect {

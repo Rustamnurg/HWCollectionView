@@ -95,7 +95,10 @@ static NSString * const historyCell = @"HistoryCell";
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 400;
+    Photo *photo = [_photoArr objectAtIndex:indexPath.row];
+    float prop = tableView.frame.size.width/[UIImage imageNamed:photo.photoName].size.width;
+    int cellHeight = [UIImage imageNamed:photo.photoName].size.height * prop + 64;
+    return cellHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -111,8 +114,6 @@ static NSString * const historyCell = @"HistoryCell";
     _photoDate = [_photoArr objectAtIndex:indexPath.row];
     cell.userNameLabel.text = _photoDate.author;
     cell.contentImage.image = [UIImage imageNamed: _photoDate.photoName];
-    cell.userProfilePhoto.image = [UIImage imageNamed: [_profilePhottoArr objectForKey:_photoDate.author]];
-    
     cell.userNameLabel.tag = indexPath.row;
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedOnLink:)];
     [cell.userNameLabel setUserInteractionEnabled:YES];
