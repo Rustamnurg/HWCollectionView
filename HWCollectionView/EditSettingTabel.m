@@ -241,7 +241,6 @@
     return userSettings;
 }
 - (BOOL)isChangeAnything{
- //   UserSettings *userSettings = (UserSettings*)[UserSettings unarchiveUserSettings];
     
     NSLog(@"%@ - %@", _userSettings.name, _nameTextField.text);
     NSLog(@"%@ - %@", _userSettings.userName, _userNameTextField.text);

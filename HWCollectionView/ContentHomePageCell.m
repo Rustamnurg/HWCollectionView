@@ -14,11 +14,7 @@
     [super awakeFromNib];
     _contentImage.contentMode = UIViewContentModeScaleAspectFit;
     
-    
 }
-
-
-
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

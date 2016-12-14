@@ -54,9 +54,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [flowLayout setItemSize:CGSizeMake(self.view.frame.size.width/3-1, self.view.frame.size.width/3-1)];
     [self.collectionView setCollectionViewLayout:flowLayout];
     
-
-
-    
     _refreshControl = [UIRefreshControl new];
     [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:_refreshControl];
@@ -66,7 +63,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (IBAction)infoButtonPressed:(id)sender {
-   
+    
 }
 
 - (void)refresh{
@@ -84,7 +81,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = (CollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     Photo *photo = [_photosArr objectAtIndex:indexPath.row];
-    //cell.labelCell.text = _arrayLabels[indexPath.row];
     cell.imageViewCell.image = [UIImage imageNamed: photo.photoName];
     return cell;
 }

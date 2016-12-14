@@ -24,6 +24,7 @@
 @property (strong, nonatomic) Photo *photoDate;
 @property (strong, nonatomic) History *historyDate;
 @property (strong, nonatomic) NSDictionary *profilePhottoArr;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 
 @end
@@ -36,9 +37,7 @@ static NSString * const historyCell = @"HistoryCell";
     [super viewDidLoad];
     
     [self.feedTabelView registerNib:[UINib nibWithNibName:tabelCellName bundle:nil] forCellReuseIdentifier:tabelCellName];
-    
     [self.storyCollection registerNib:[UINib nibWithNibName:collectionCellNamec bundle:nil] forCellWithReuseIdentifier:collectionCellNamec];
-    
     _profilePhottoArr = [[DataManager sharedInstance] getUserProfilPhoto];
     
     if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"firstStart"] isEqual:@"false"]){
@@ -80,17 +79,15 @@ static NSString * const historyCell = @"HistoryCell";
         history = [[History alloc]initWithAuthor:@"login4" andHistoryName:@"7" andCreatDate:@"2007-01-01 10:00:00"];
         [[DataManager sharedInstance] addHistory: history];
         
-        //        [[DataManager sharedInstance] createTable];
-        //        [[DataManager sharedInstance] addUsers: user];
-        //        [[DataManager sharedInstance] addPhoto: photo];
-        //        [[DataManager sharedInstance] addHistory: history];
     }
     
     _photoArr = [[DataManager sharedInstance] getAllPhoto];
     _historyArr = [[DataManager sharedInstance] getAllHistory];
     _profilePhottoArr = [[DataManager sharedInstance] getUserProfilPhoto];
     self.feedTabelView.allowsSelection = NO;
+    _navItem.title = @"Instagram";
 }
+
 
 #pragma mark - Table view data source
 
@@ -145,7 +142,5 @@ static NSString * const historyCell = @"HistoryCell";
     cell.loginLabel.text = _historyDate.author;
     return cell;
 }
-
-
 
 @end
